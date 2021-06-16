@@ -12,6 +12,10 @@
     {
       "src": "/webhook",
       "dest": "/api/webhook.php"
+    },
+    {
+      "src": "/send",
+      "dest": "/api/index.php"
     }
   ]
 }

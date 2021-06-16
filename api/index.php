@@ -4,6 +4,9 @@ require_once 'Bot.php';
 header('content-type: application/json');
 $token = $_REQUEST['token'] ?? null;
 $message = $_REQUEST['message'] ?? '';
+if(empty($token) || empty($message)){
+    die( json_encode(['code' => 422, 'message' => '参数不能为空']));
+}
 
 $bot = new Bot();
 
