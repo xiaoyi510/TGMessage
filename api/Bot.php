@@ -51,12 +51,12 @@ class Bot
 
     public function encryption($chat_id): string
     {
-        return base64_encode($this->key . $chat_id);
+        return bin2hex($this->key . $chat_id);
     }
 
     public function decryption($text): string
     {
-        return substr(base64_decode($text), strlen($this->key));
+        return substr(hex2bin($text), strlen($this->key));
     }
 
     /**
